@@ -14,6 +14,7 @@ public:
 	std::string getNumber();
 	std::string getId();
 	std::string getPassword();
+	std::string getName();
 
 private:
 	int type;
@@ -25,6 +26,10 @@ private:
 
 int Member::getType() {
 	return type;
+}
+
+std::string Member::getName() {
+	return name;
 }
 
 std::string Member::getNumber() {

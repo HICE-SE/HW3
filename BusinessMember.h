@@ -15,6 +15,10 @@ public:
 		recruitmentsList.push_back(newRecruitment);
 	}
 
+	vector<Recruitment*> getRecruitmentsList() {
+		return recruitmentsList;
+	}
+
 private:
 	vector<Recruitment*> recruitmentsList;
 };

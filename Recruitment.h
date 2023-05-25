@@ -4,7 +4,7 @@ class Recruitment
 {
 public:
 	Recruitment(BusinessMember* businessMember, std::string jobTitle, int capacity, std::string deadline)
-		: businessMember(businessMember), jobTitle(jobTitle), capacity(capacity), deadline(deadline) {}
+		: businessMember(businessMember), jobTitle(jobTitle), capacity(capacity), deadline(deadline), applyCnt(0) {}
 
 	std::string getJobTitle() {
 		return jobTitle;
@@ -22,10 +22,15 @@ public:
 		return businessMember;
 	}
 
+	void addApplyCnt() {
+		applyCnt++;
+	}
+
 private:
 	std::string jobTitle;
 	int capacity;
 	std::string deadline;
 	BusinessMember* businessMember;
+	int applyCnt;
 };
 

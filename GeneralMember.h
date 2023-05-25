@@ -7,15 +7,17 @@ public:
 	GeneralMember(int type, std::string name, std::string number, std::string id, std::string password)
 		: Member(type, name, number, id, password) {}
 
-	RecruitmentApplication* addNewRecruitmentApplication(Recruitment* newRecruitment) {
-		std::string companyName = newRecruitment->getBusinessMember()->getName();
-		std::string jobTitle = newRecruitment->getJobTitle();
-		int capacity = newRecruitment->getCapacity();
-		std::string deadline = newRecruitment->getDeadline();
+	RecruitmentApplication* addNewRecruitmentApplication(Recruitment* recruitment) {
+		std::string companyName = recruitment->getBusinessMember()->getName();
+		std::string jobTitle = recruitment->getJobTitle();
+		int capacity = recruitment->getCapacity();
+		std::string deadline = recruitment->getDeadline();
 
-		RecruitmentApplication newApplication(companyName, jobTitle, capacity, deadline, newRecruitment);
+		RecruitmentApplication newApplication(companyName, jobTitle, capacity, deadline, recruitment);
 
 		recruitmentApplicationsList.push_back(&newApplication);
+
+		recruitment->addApplyCnt();
 
 		return &newApplication;
 	}
