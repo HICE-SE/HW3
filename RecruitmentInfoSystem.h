@@ -95,6 +95,10 @@ public:
 		loggedInMember = pMember;
 	}
 
+	void logout() {
+		loggedInMember = nullptr;
+	}
+
 private:
 	Member* loggedInMember;
 	MemberContainer memberContainer;

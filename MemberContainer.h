@@ -18,6 +18,22 @@ public:
 
 	}
 
+	void deleteMember(Member* member) {
+		string deleteMemberSSN = member->getNumber();
+
+		for (int i = 0; i < memberList.size(); i++) {
+			string storedMemberSSN = memberList[i]->getNumber();
+
+			if (deleteMemberSSN.compare(storedMemberSSN) == 0) {
+				memberList.erase(memberList.begin() + i);
+			}
+		}
+	}
+
+	std::vector<Member*> listMembers() {
+		return memberList;
+	}
+
 private:
 	std::vector<Member*> memberList;
 };

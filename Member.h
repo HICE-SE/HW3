@@ -3,8 +3,17 @@
 class Member
 {
 public:
-	Member();
-	Member(int type, std::string name, std::string number, std::string id, std::string password);
+	Member(int type, std::string name, std::string number, std::string id, std::string password) {
+		this->type = type;
+		this->name = name;
+		this->number = number;
+		this->id = id;
+		this->password = password;
+	}
+	int getType();
+	std::string getNumber();
+	std::string getId();
+	std::string getPassword();
 
 private:
 	int type;
@@ -14,16 +23,18 @@ private:
 	std::string password;
 };
 
-Member::Member() {
-	this->type = 0;
-	name = number = id = password = "";
+int Member::getType() {
+	return type;
 }
 
-Member::Member(int type, std::string name, std::string number, std::string id, std::string password) {
-	this->type = type;
-	this->name = name;
-	this->number = number;
-	this->id = id;
-	this->password = password;
+std::string Member::getNumber() {
+	return number;
 }
 
+std::string Member::getId() {
+	return id;
+}
+
+std::string Member::getPassword() {
+	return password;
+}
